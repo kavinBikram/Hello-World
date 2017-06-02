@@ -1,0 +1,10 @@
+ ProductDAO` productDAO=new ProductDAOImpl();
+                List<Product> products=null;
+                if(request.getParameter("search")!=null && !request.getParameter("search").isEmpty()){
+                    String search=request.getParameter("search");
+                    products=productDAO.search(search);
+                    
+                }
+                else{
+                    products=productDAO.getAll();
+                }
